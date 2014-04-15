@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     #url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.IndexView.as_view(), name = "index"),
     url(r'^upload$', views.UploadView.as_view(), name = "upload_file"),
+    url(r'^result$', views.ResultView.as_view(), name = "result"),
 )

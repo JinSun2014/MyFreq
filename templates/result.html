@@ -1,3 +1,17 @@
 <%inherit file="base.html" />
-<h3>Hello, this is result page</h3>
-<p>The url of input is:  ${url}</p>
+
+<%def name="css_files()">
+    ${ parent.css_files() }
+    ## <link href="/static/css/index.css" rel="stylesheet">
+</%def>
+
+<%def name="title()">MyFreq! - result</%def>
+<%def name="js_defer()">
+    ${ parent.js_defer() }
+</%def>
+
+<div class="col-xd-12">
+    <h3> Result </h3>
+    <h4> File Content: </h4>
+    <pre> ${ file } </pre>
+</div>
