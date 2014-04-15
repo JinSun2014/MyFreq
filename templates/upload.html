@@ -1,0 +1,35 @@
+<%inherit file="base.html" />
+
+<%def name="css_files()">
+    ${ parent.css_files() }
+    ## <link href="/static/css/index.css" rel="stylesheet">
+</%def>
+
+<%def name="title()">Upload File</%def>
+<%def name="js_defer()">
+    ${ parent.js_defer() }
+</%def>
+
+<div class="col-xd-12">
+    <h2 class="text-center">Upload File</h2>
+    <form class="form-horizontal" id="inputForm" action="/upload" method="POST" role="form" enctype="multipart/form-data">
+        <div style="display:none">
+            <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}" />
+        </div>
+        <div class="col-xs-12">
+            % for field in form:
+            <div class="form-group ${ 'has-error' if field.errors else ''}">
+                ${ field }
+                % if field.errors:
+                <span class="help-block">${ field.errors[0] }</span>
+                % endif
+                </div>
+            % endfor
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <input type="submit" value="Upload" class="btn btn-primary col-xs-12">
+            </div>
+        </div>
+    </form>
+</div>

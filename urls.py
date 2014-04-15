@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'MyFreq.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
+    #url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.IndexView.as_view(), name = "index"),
+    url(r'^upload$', views.UploadView.as_view(), name = "upload_file"),
 )

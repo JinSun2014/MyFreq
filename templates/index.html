@@ -1,10 +1,16 @@
 <%inherit file="base.html" />
+
 <%def name="js_defer()">
     ${ parent.js_defer()}
-    <script type="text/javascript" src="/static/js/findSource.js"></script>
+    <script type="text/javascript" src="/static/js/myfreq.js"></script>
+</%def>
+<%def name="css_files()">
+    ${ parent.css_files()}
 </%def>
 
-<h3>Hello, this is Sourcerous</h3>
+<%def name="title()">MyFreq</%def>
+
+<h3>Welcome to MyFreq!</h3>
 <br>
 
 <div class="form-group">
