@@ -14,4 +14,26 @@
     <h3> Result </h3>
     <h4> File Content: </h4>
     <pre> ${ file } </pre>
+    <br>
+    <h4> Statistic Result: </h4>
+    <div id="result-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>word</th>
+                    <th>frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                % for i, (k, v) in result:
+                    <tr>
+                        <td> ${ i + 1 } </td>
+                        <td> ${ k } </td>
+                        <td> ${ v } </td>
+                    </tr>
+                 % endfor
+            </tbody>
+        </table>
+    </div>
 </div>
