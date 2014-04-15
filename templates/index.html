@@ -1,0 +1,15 @@
+<%inherit file="base.html" />
+<%def name="js_defer()">
+    ${ parent.js_defer()}
+    <script type="text/javascript" src="/static/js/findSource.js"></script>
+</%def>
+
+<h3>Hello, this is Sourcerous</h3>
+<br>
+
+<div class="form-group">
+    <label for="user-input">Please input an url for article</label>
+    <input class="form-control" id="user-input" placeholder="http://">
+</div>
+<button id="search" class="btn btn-default">Search</button>
+
