@@ -10,7 +10,8 @@ class UploadView(FormView):
     template_name = 'upload.html'
 
     def form_valid(self, form):
-        file = form.cleaned_data['file']
+        file = form.getFile()
+
         file_content = file.read()
         file_output = open('uploaded/temp', 'wb+')
         file_output.write(file_content)

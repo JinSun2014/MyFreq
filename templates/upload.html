@@ -11,7 +11,11 @@
 </%def>
 
 <div class="col-xd-12">
-    <h2 class="text-center">Upload File</h2>
+    <h2>Welcome to MyFreq!</h2>
+    <br>
+    <h4>Upload your text file and MyFreq! will show your 25 most frequently used words!</h4>
+    <br>
+    <p> Please upload .txt file.</p>
     <form class="form-horizontal" id="inputForm" action="/" method="POST" role="form" enctype="multipart/form-data">
         <div style="display:none">
             <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}" />
@@ -28,7 +32,7 @@
         </div>
         <div class="col-xs-12">
             <div class="form-group">
-                <input type="submit" value="Upload" class="btn btn-primary col-xs-12">
+                <input type="submit" value="Upload" class="btn btn-success col-xs-12">
             </div>
         </div>
     </form>
