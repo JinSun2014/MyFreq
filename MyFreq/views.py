@@ -11,10 +11,8 @@ class UploadView(FormView):
 
     def form_valid(self, form):
         file = form.getFile()
-
         file_content = file.read()
-        file_output = open('uploaded/temp', 'wb+')
-        file_output.write(file_content)
+        self.request.session['file'] = file_content
         return super(UploadView, self).form_valid(form)
 
     def get_success_url(self):
@@ -43,8 +41,7 @@ class ResultView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ResultView, self).get_context_data(**kwargs)
-        file_input = open('uploaded/temp', 'r')
-        file = file_input.read().decode('utf8')
-        context['file'] = file
+        file = self.request.session['file']
+        context['file'] = self.request.session['file']
         context['result'] = self.handle_file(file)
         return context

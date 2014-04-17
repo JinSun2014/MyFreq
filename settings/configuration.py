@@ -1,1 +1,2 @@
-from dev_local import *
+#from settings.heroku import *
+from settings.dev_local import *
