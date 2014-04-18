@@ -1,1 +1,1 @@
-web: gunicorn MyFreq.wsgi.wsgi:application
+web: gunicorn wsgi.wsgi:application
