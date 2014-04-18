@@ -12,3 +12,7 @@ urlpatterns = patterns('',
     url(r'^$', views.UploadView.as_view(), name = "upload_file"),
     url(r'^result$', views.ResultView.as_view(), name = "result"),
 )
+
+urlpatterns += patterns('django.comtrib.staticfiles.views',
+        url(r'^static/(?P<path>.*)$', 'serve'),
+)
